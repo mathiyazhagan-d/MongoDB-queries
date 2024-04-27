@@ -68,7 +68,8 @@ db.products.find({ "product_color": "indigo", "product_price": 492.00 })
 ```
 db.products.deleteMany({ "product_price": 28.00 })
 ```
-```markdown
+
+
 ## JSON Data
 
 ```json
