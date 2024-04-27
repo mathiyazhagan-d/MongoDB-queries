@@ -1,5 +1,73 @@
 
+#  simple CRUD
 
+## MongoDB Queries
+ 
+
+
+(day-35 Task) 
+
+
+
+### 1 Find all products:
+
+```
+db.products.find({})
+```
+
+### 2 Find products with price between 400 and 800:
+
+```
+db.products.find({ "product_price": { $gte: 400, $lte: 800 } })
+```
+
+### 3 Find products with price not between 400 and 600:
+
+```
+db.products.find({ "product_price": { $not: { $gte: 400, $lte: 600 } } })
+```
+
+### 4 List four products with price greater than 500:
+
+```
+db.products.find({ "product_price": { $gt: 500 } }).limit(4)
+```
+
+### 5 Find product name and material:
+
+```
+db.products.find({}, { "product_name": 1, "product_material": 1, "_id": 0 })
+```
+
+### 6 Find product with id 10:
+
+```
+db.products.find({ "id": "10" })
+```
+
+### 7 Find product name and material:
+
+```
+db.products.find({}, { "product_name": 1, "product_material": 1, "_id": 0 })
+```
+
+### 8 Find products with material containing "soft":
+
+```
+db.products.find({ "product_material": { $regex: /soft/i } })
+```
+
+### 9 Find products with color "indigo" and price 492.00:
+
+```
+db.products.find({ "product_color": "indigo", "product_price": 492.00 })
+```
+
+### 10 Delete products with price 28:
+
+```
+db.products.deleteMany({ "product_price": 28.00 })
+```
 ```markdown
 ## JSON Data
 
@@ -181,67 +249,4 @@
         "product_color": "indigo"
     }
 ]
-```
-
-## MongoDB Queries
-
-### Find all products:
-
-```
-db.products.find({})
-```
-
-### Find products with price between 400 and 800:
-
-```
-db.products.find({ "product_price": { $gte: 400, $lte: 800 } })
-```
-
-### Find products with price not between 400 and 600:
-
-```
-db.products.find({ "product_price": { $not: { $gte: 400, $lte: 600 } } })
-```
-
-### List four products with price greater than 500:
-
-```
-db.products.find({ "product_price": { $gt: 500 } }).limit(4)
-```
-
-### Find product name and material:
-
-```
-db.products.find({}, { "product_name": 1, "product_material": 1, "_id": 0 })
-```
-
-### Find product with id 10:
-
-```
-db.products.find({ "id": "10" })
-```
-
-### Find product name and material:
-
-```
-db.products.find({}, { "product_name": 1, "product_material": 1, "_id": 0 })
-```
-
-### Find products with material containing "soft":
-
-```
-db.products.find({ "product_material": { $regex: /soft/i } })
-```
-
-### Find products with color "indigo" and price 492.00:
-
-```
-db.products.find({ "product_color": "indigo", "product_price": 492.00 })
-```
-
-### Delete products with price 28:
-
-```
-db.products.deleteMany({ "product_price": 28.00 })
-```
 ```
