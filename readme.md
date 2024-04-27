@@ -1,5 +1,5 @@
 
-#  simple CRUD
+#  MongoDB
 
 ## MongoDB Queries
  
